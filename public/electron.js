@@ -1,5 +1,7 @@
 const { app, BrowserWindow } = require('electron')
 
+const url = 'http://localhost:3000'
+
 const filter = {
     urls: ['https://*.webullfintech.com/*', 'https://*.webullfinance.com/*', 'https://*.webull.com/*']
 }
@@ -9,7 +11,8 @@ function createWindow() {
         width: 800,
         height: 600,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: false,
+            partition: 'persist:main'
         }
     })
 
@@ -25,13 +28,13 @@ function createWindow() {
         filter,
         (details, callback) => {
             details.responseHeaders['access-control-allow-origin'] = [
-                'http://localhost:3000' // URL your local electron app hosted
+                url // URL your local electron app hosted
             ]
         callback({ responseHeaders: details.responseHeaders })
         }
     )
 
-    win.loadURL("http://localhost:3000") // change for production
+    win.loadURL(url) // change for production
 }
 
 app.whenReady().then(createWindow)

@@ -2,14 +2,17 @@ import './App.css';
 import { useState } from 'react'
 import Webull from 'webull/dist'
 import Login from './components/Login'
+import AccountSummary from './components/AccountSummary';
+import { useCookies } from 'react-cookie'
 
 function App() {
   const [webull, setWebull] = useState<Webull | null>(null)
+  const [cookies, setCookie, removeCookie] = useCookies(['deviceId', 'accessToken', 'refreshToken', 'accountId', 'lzone', 'email'])
 
   return (
-    <div className="App h-screen">
-        {webull == null && 
-          <Login setWebull={setWebull}/>
+    <div className={`App ${webull ? "trading" : "h-screen"}`}>
+        {webull == null ? 
+          <Login setWebull={setWebull} setCookies={setCookie} cookies={cookies}/> : <AccountSummary webull={webull} />
         }
     </div>
   );
