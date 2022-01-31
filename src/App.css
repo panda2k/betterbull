@@ -46,6 +46,86 @@
 .account-details {
   width: 332px;
   height: 1029px;
-  background-color: rgb(11, 15, 28);
   color: white;
+}
+
+.orders {
+  width: 806px;
+  height: 231px;
+}
+
+.divider {
+  border-left-width: 1px;
+  border-color: rgb(28, 35, 52);
+}
+
+.tab-color {
+  background-color: rgb(35, 43, 66);
+}
+
+.primary-background {
+  background-color: rgb(11, 15, 28);
+}
+
+.secondary-background {
+  background-color: rgb(17, 22, 38);
+}
+
+.grey-text {
+  color: rgb(107, 119, 141)
+}
+
+.active-text {
+  color: rgb(18, 180, 255);
+  position: relative;
+}
+
+.active-text:before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: 0;
+  left: 25%;
+  border-bottom: 1px solid rgb(18, 180, 255);
+}
+
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-weight: 400;
+}
+
+table, th, td {
+  border-right: 1px solid rgb(33, 41, 59);
+  border-bottom: 1px solid rgb(33, 41, 59);
+}
+
+.buy-text {
+  color: rgb(8, 193, 157)
+}
+
+.sell-text {
+  color: rgb(246, 50, 98)
+}
+
+.negative-text {
+  color: rgb(194, 84, 43) !important
+}
+
+.positive-text {
+  color: rgb(17, 146, 130) !important
+}
+
+.neutral-text {
+  color: rgb(162, 175, 204)
+}
+
+.top-divider {
+  border-top: 6px solid rgb(17, 22, 38)
 }
